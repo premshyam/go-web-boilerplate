@@ -7,7 +7,7 @@ import (
 
 func InitializeRoutes(){
 	r := gin.Default()
-	controllerRoutes(r)
+	statusControllerRoutes(r)
 	r.Run()
 }
 
@@ -16,7 +16,7 @@ Seperate route function for seperate controller
 All controller specific dependency injection and
 controller initialization will happen from there specific function
 */
-func controllerRoutes(r *gin.Engine){
-	statusController := controller.NewController() 
+func statusControllerRoutes(r *gin.Engine){
+	statusController := controller.NewStatusController() 
 	r.GET("/ping", statusController.Pong)
 }

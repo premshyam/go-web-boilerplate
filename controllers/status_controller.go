@@ -10,7 +10,7 @@ type statusController struct {
 	baseController
 }
 
-func NewController() *statusController {
+func NewStatusController() *statusController {
 	return &statusController{}
 }
 
