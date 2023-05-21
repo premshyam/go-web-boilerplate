@@ -5,7 +5,16 @@ import (
   
 	"github.com/gin-gonic/gin"
 )
-func Pong(c *gin.Context) {
+
+type statusController struct {
+	baseController
+}
+
+func NewController() *statusController {
+	return &statusController{}
+}
+
+func (ctrl *statusController) Pong(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 	"message": "pong",
 	})
